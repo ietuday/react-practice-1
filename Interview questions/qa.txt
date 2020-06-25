@@ -1,0 +1,53 @@
+1. Name Lifecycle Method and Purpose
+
+Lifecycle Method are changing. 
+
+Lifecycle Methods Render :
+
+constructor-
+$. Only Once, set intial state
+
+static getDerivedStateFromProps - 
+$. replacement of componentwillreceiveProps
+$. It run after constructor
+$. It is static because we want to directly not access this. It protects state to change.
+
+render -
+$. We cannot set state
+
+componentDidMount- 
+$. It run after the component is mounted. i.e. DOM is ready
+
+Lifecycle Methods Rerender :
+
+static getDerivedStateFromProps-
+$. replacement of componentwillreceiveProps
+$. It run after constructor
+$. It is static because we want to directly not access this. It protects state to change.
+
+shouldComponentUpdate-
+$. If this really need to updated or not
+
+render -
+$. We cannot set state
+
+
+getSnapshotBeforeUpdate-
+$. pre commit Phase
+$. Just before updated
+$. Replacement of componentWillUpdate
+$. It comes picture due react introduce lazy loading
+
+componentDidUpdate-
+$. This means component Updated.
+
+And Final
+
+componentWillUnmount-
+It called whenever the component destroy.
+
+
+2. How to prevent component gets Updated.
+    *. shouldComponentUpdate
+    *. PureComponent
+    *. React.Memo
